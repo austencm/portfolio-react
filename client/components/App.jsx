@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header'
 import Footer from './Footer'
 import ProjectsContainer from './ProjectsContainer';
+import styles from 'app.scss'
 
 export default class App extends Component {
   render() {

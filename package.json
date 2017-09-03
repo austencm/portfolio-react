@@ -25,6 +25,7 @@
     "babel-loader": "^7.1.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "css-hot-loader": "^1.3.0",
     "css-loader": "^0.28.5",
     "extract-text-webpack-plugin": "^3.0.0",
     "markdown-with-front-matter-loader": "^0.1.0",
