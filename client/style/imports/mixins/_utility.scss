@@ -1,0 +1,4 @@
+@function img($filename) {
+	$image-dir: '/wp-content/uploads' !default !global;
+	@return unquote( 'url(#{ $image-dir }/#{ $filename })' );
+}

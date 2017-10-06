@@ -1,0 +1,17 @@
+@mixin font-face($name, $filename, $weight: normal, $style: normal) {
+	$src: '../fonts/#{$filename}';
+
+	@font-face {
+		font-family: $name;
+		// src: url('#{$src}.ttf') format('truetype');
+		src: url('#{$src}.woff2') format('woff2'), url('#{$src}.woff') format('woff');
+		// src: url('#{$src}.eot'); // IE9 compat
+		// src: url('#{$src}.eot?#iefix') format('embedded-opentype'), // IE8 and below
+		// 	url('#{$src}.woff2') format('woff2'),
+		// 	url('#{$src}.woff') format('woff'), // standards
+		// 	url('#{$src}.ttf') format('truetype'); // Safari, Android, iOS
+
+		font-style: $style;
+		font-weight: $weight;
+	}
+}

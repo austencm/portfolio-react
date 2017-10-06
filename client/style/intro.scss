@@ -1,0 +1,173 @@
+@import 'imports/mixins/vertical-center';
+
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.575);
+
+@function gradient-stepped($color, $start-opacity: 0, $layers: 10, $start-offset: 0) {
+  $stops: ();
+
+  $stops: append($stops, transparent 0%, 'comma');
+  @for $i from 1 through $layers {
+    // $offset: if($i = 1, $start-offset + $layer-offset * $i, $layer-offset * $i);
+    $stops: append(
+      $stops,
+      ( '#{transparentize($color, 1 - ($i - 1) / $layers)} #{($i / $layers) * 100}%',
+        '#{transparentize($color, 1 - $i / $layers)} #{($i / $layers) * 100}%' ),
+      'comma');
+  }
+
+  @return #{$stops};
+}
+
+
+@keyframes scaleInFromHalf {
+  0% {
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes throb {
+  0% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(0.5);
+  }
+}
+
+@keyframes throbSm {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fadeInBg {
+  0% {
+    background-color: transparent;
+  }
+}
+
+
+$intro-in-duration: 1s;
+
+
+#planet {
+  width: 22vw;
+  height: 22vw;
+  padding: 5vw;
+  margin: 0 auto;
+  position: relative;
+  top: calc(50% - 11vw);
+  z-index: 8;
+  text-align: center;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    background: $gray-900;
+    border-radius: 50%;
+    box-shadow: 0 0 6.5rem #{$gray-900};
+    transform: scale(0);
+    animation:
+      // 0.5s ease-out #{$intro-in-duration + 0.5s} both fadeIn,
+      1s ease-out #{$intro-in-duration + 0.5s} both scaleIn,
+      3s infinite ease-in-out #{$intro-in-duration + 1.5s} alternate both throbSm;
+  }
+}
+
+.planet-content {
+  position: relative;
+  z-index: 10;
+  opacity: 0;
+  color: $white;
+  animation:
+    0.5s ease-in-out #{$intro-in-duration + 1s} both fadeIn;
+    // 0.5s ease-in-out #{$intro-in-duration + 1s} both scaleInFromHalf;
+
+  .btn {
+    margin-top: 0.8em;
+    font-size: 1.3vw;
+
+    &:hover {
+      transform: scale(1.1);
+      border-color: transparent;
+    }
+  }
+}
+
+.orbit-cont {
+  width: 0;
+  height: 0;
+  @include vertical-center;
+  position: absolute;
+  left: 0; right: 0;
+  margin: 0 auto;
+}
+
+#name {
+  font: {
+    family: 'Coco Gothic Ultralight Italic';
+    size: 6vw;
+    weight: 200;
+    style: italic;
+  }
+  color: $white;
+}
+
+#intro {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  .bg-radial {
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    opacity: 0;
+    transform: scale(0.5);
+
+    $radial: radial-gradient(circle, #{gradient-stepped($color: $blue, $layers: 15)});
+    background-image: #{$radial};
+    animation:
+      #{$intro-in-duration / 4} ease-in-out both fadeIn,
+      #{$intro-in-duration} #{$easeOutBack} both scaleInFromHalf,
+      6s infinite #{$intro-in-duration} ease-in-out alternate throb;
+  }
+
+  .bg-radial:nth-child(3) {
+    $radial: radial-gradient(circle, #{gradient-stepped($color: $teal, $layers: 15)});
+    background-image: #{$radial};
+    animation-delay:
+      0s,
+      0s,
+      #{$intro-in-duration + 3s};
+  }
+
+  .bg-fill {
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    background: $teal;
+    // background-image: radial-gradient(circle, $gray-900, $gray-900 50%, transparent 50%);
+
+    animation: #{$intro-in-duration} ease-in-out both fadeIn;
+    // animation-delay: #{$intro-in-duration};
+  }
+}

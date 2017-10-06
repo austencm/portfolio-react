@@ -1,0 +1,9 @@
+%vertical-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin vertical-center() {
+	@extend %vertical-center;
+}

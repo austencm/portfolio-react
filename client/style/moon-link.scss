@@ -1,0 +1,96 @@
+
+@mixin createOrbit($radius, $id) {
+  @at-root {
+    @keyframes orbit#{$id} {
+        from {transform: rotate(0deg) translateX(#{$radius}) rotate(0deg); }
+        to   { transform: rotate(360deg) translateX(#{$radius}) rotate(-360deg); }
+    }
+  }
+}
+@include createOrbit(17vw, 1);
+@include createOrbit(23.5vw, 2);
+@include createOrbit(30vw, 3);
+
+
+$intro-in-duration: 2s;
+
+
+.moon {
+  width: 5vw;
+  height: 5vw;
+  position: absolute;
+  left: -2.5vw;
+  top: -2.5vw;
+  z-index: 7;
+  animation: 12s linear infinite orbit1;
+
+  &:nth-child(2) {
+    animation-name: orbit2;
+    animation-duration: 10s;
+  }
+  &:nth-child(3) {
+    animation-name: orbit3;
+    animation-duration: 15s;
+  }
+
+  &:hover {
+    z-index: 8;
+    animation-play-state: paused;
+  }
+}
+
+.moon-link {
+  font-size: 1.2vw;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+  position: relative;
+  // background: $gray-700;
+  border-radius: 50%;
+  box-shadow: 0 0 1vw #{$teal};
+  opacity: 0;
+  transition: all 0.1s ease-in-out;
+  animation: 2s ease-in-out #{$intro-in-duration + 1s} both fadeIn;
+
+  .icon {
+    width: 100%;
+    height: 100%;
+  }
+
+  &::after {
+    content: attr(aria-label);
+    display: block;
+    padding: 0.3em 0.9em;
+    margin: 0 auto;
+    position: absolute;
+    top: calc(-100% + 4.5em);
+    left: 3.8em;
+    font-size: 0.8em;
+    color: #fff;
+    font-weight: 700;
+    background: $gray-800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.5);
+    transform-origin: left bottom;
+    transition:
+      opacity 0.2s ease-in-out 1s,
+      transform 0.2s ease-in-out 1s;
+  }
+
+  &:hover {
+    // box-shadow: 0 0 3vw #{$gray-700};
+    transform: scale(1.1);
+
+    &::after {
+      opacity: 1;
+      transform: scale(1);
+      transition-duration: 0.1s, 0.2s;
+      transition-delay: 0.2s, 0.2s;
+    }
+  }
+}

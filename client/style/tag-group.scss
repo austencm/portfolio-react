@@ -1,0 +1,14 @@
+.tag-group {
+  padding-left: 0;
+  list-style: none;
+
+  .tag {
+    display: inline-block;
+    padding: 0.3em 1.1em;
+    margin-top: 0.5em;
+
+    &:not(:last-of-type) {
+      margin-right: 0.6em;
+    }
+  }
+}

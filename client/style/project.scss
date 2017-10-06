@@ -1,4 +1,677 @@
+// @mixin gradient-quilt($color, $color-2, $scale: 5) {
+//   $stops: '';
+//   @for $i from 0 through ($scale - 1) {
+//     @for $j from 0 through 1 {
+//       $stops: $stops + transparentize($color, 1 / ($i + 1)) + ' ' + ((100% / $scale) * $i);
+//     }
+//
+//     @if $i < ($scale - 1) {
+//       $stops: $stops + ', ';
+//     }
+//   }
+//   background: linear-gradient(0deg, #{$stops}), linear-gradient(90deg, #{$stops}), $color-2;
+//
+//
+//   background: {
+//     // image: linear-gradient(0deg, rgba(255,0,102,0) 20%, rgba(255,0,102,0.0980392) 20%, rgba(255,0,102,0.0980392) 40%, rgba(255,0,102,0.2) 40%, rgba(255,0,102,0.2) 60%, rgba(255,0,102,0.4) 60%, rgba(255,0,102,0.4) 80%, rgba(255,0,102,0.6) 80%), linear-gradient(-90deg, rgba(255,0,102,0) 20%, rgba(255,0,102,0.0980392) 20%, rgba(255,0,102,0.0980392) 40%, rgba(255,0,102,0.2) 40%, rgba(255,0,102,0.2) 60%, rgba(255,0,102,0.4) 60%, rgba(255,0,102,0.4) 80%, rgba(255,0,102,0.6) 80%), rgb(255, 204, 0);
+//     origin: padding-box;
+//     clip: border-box;
+//     size: 100% 100%;
+//   }
+// }
+
+
+
+$project-theme-colors: (
+  dogtown-media: #17b0d0,
+  kirb: darken(#3fddd3, 10%),
+  structural-focus: #1e3038,
+  tiro-security: darken(#00b384, 3%),
+  job-one: #228b3e,
+  youtube-auto-like: #e62117
+);
+
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.575);
+$coverRotate3d: rotate3d(-1, -0.5, 0.4, -40deg);
+
+@keyframes showShadow {
+  0% {
+    text-shadow: none;
+  }
+}
+
+@keyframes hideShadow {
+  100% {
+    text-shadow: none;
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: translate3d(-1.5vw, 2vw, -4vw);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+// @keyframes collapse {
+//   0% {
+//     transform: none;
+//   }
+//   100% {
+//     transform: translate3d(-1.5vw, 2vw, -4vw);
+//   }
+// }
+
+@keyframes clearTransform {
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100px, -100px);
+  }
+}
+
+@keyframes fadeOutDown {
+  100% {
+    opacity: 0;
+    transform: none;
+  }
+}
+
+@keyframes flyOutRight {
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+
+
+@function shadow-layered($color: $black, $start-opacity: 0.2, $layers: 3, $layer-offset: 0.6vw, $start-offset: 0) {
+  $shadows: ();
+  @for $i from 1 through $layers {
+    $offset: if($i = 1, $start-offset + $layer-offset * $i, $layer-offset * $i);
+    $shadows: append($shadows, '-#{$offset} #{$offset} 0 #{transparentize($color, 1 - $start-opacity / $i)}', 'comma');
+  }
+
+  @return #{$shadows};
+}
+
+@function shadow-3d($height: 5, $color-start: #ccc, $color-end: #aaa) {
+  $shadows: ();
+  @for $i from 1 through $height {
+    $shadows: append($shadows, '-#{1px * $i} #{1px * $i} 0 #{mix($color-end, $color-start, (100% / $height) * $i)}', 'comma');
+  }
+
+  @return #{$shadows};
+}
+
+@function project-color($project-id) {
+  @return map-get($project-theme-colors, $project-id);
+}
+
+%antialias-hack {
+  outline: 1px solid transparent;
+}
+@mixin antialias-hack {
+  @extend %antialias-hack;
+}
+
+@mixin project-initial {
+  .project:not(.visible):not(.focused):not(.open) & {
+    @content;
+  }
+}
+
+@mixin project-visible {
+  .project.visible & {
+    @content;
+  }
+}
+
+@mixin project-focused {
+  .project.focused & {
+    @content;
+  }
+}
+
+@mixin project-open {
+  .project.open & {
+    @content;
+  }
+}
+
+
+
+
+// #color
+.project {
+  @for $i from 1 through length($project-theme-colors) {
+    $id: nth(map-keys($project-theme-colors), $i);
+    $color: project-color($id);
+    $color-desat: desaturate( lighten(adjust-hue($color, -9deg), 15%), 18%);
+
+    &[data-project-id=#{$id}] {
+      .project-bg {
+        background: linear-gradient(169deg, #{transparentize($color, 0.38)} 7%, #{$color-desat}) #{$color-desat};
+      }
+
+      .project-screen {
+        background-color: $white;
+      }
+
+      .project-title {
+        color: mix($white, $color, 95%);
+        text-shadow:
+          #{shadow-3d(5, mix($white, $color, 70%), mix($white, $color, 60%))},
+          #{shadow-layered($black, 0.2, 3, $start-offset: 0.2vw)};
+      }
+
+      .project-tags .tag {
+        background-color: desaturate( darken($color, 3%), 13% );
+        color: mix($white, $color, 90%);
+        box-shadow: -3px 3px 0 #{darken($color-desat, 24%)};
+        // box-shadow: -3px 3px 0 transparentize#fff;
+        border: 2px solid transparent;
+      }
+
+      .btn {
+        background-color: mix($white, $color, 95%);
+        border: none;
+        color: $color;
+        $shadow-initial: shadow-3d(5, mix($white, $color, 70%), mix($white, $color, 60%));
+        box-shadow: #{$shadow-initial};
+
+        &:hover {
+          box-shadow:
+            #{$shadow-initial},
+            #{shadow-layered($black, 0.2, 2, $layer-offset: 0.4vw, $start-offset: 0.2vw)};
+          filter: hue-rotate(-20deg);
+        }
+
+        &:active {
+          box-shadow:
+            #{$shadow-initial},
+            #{shadow-layered($black, 0.2, 2, $layer-offset: 0.3vw, $start-offset: 0.2vw)};
+        }
+      }
+
+      .trigger-close .btn {
+        color: mix($white, $color, 95%);
+        background-color: $color;
+        box-shadow: none;
+        transform-origin: left center;
+
+        &:hover {
+          transform: scaleX(1.03);
+        }
+      }
+
+      .project-detail-left-cont {
+        background-color: adjust-hue(lighten($color-desat, 20%), -15deg);
+      }
+
+      .project-body {
+        a {
+          color: $color;
+        }
+
+        code {
+          color: darken(adjust-hue($color-desat, -15deg), 20%);
+        }
+      }
+    }
+  }
+}
+
+
+$project-height: 52vw;
+$project-height-max: 48rem;
+.project {
+  height: $project-height;
+  max-height: $project-height-max;
+  margin: 0 2vw 1.5vw;
+  position: relative;
+  z-index: 1;
+  outline: 0;
+  transition: all 0.3s ease-in-out;
+
+  * {
+    transition: all 0.5s ease-in-out;
+  }
+
+  &:not(.focused) {
+    opacity: 0.3;
+    transform: scale(0.8);
+    // filter: #{'grayscale(1)'};
+
+    // .project-bg {
+    //   // filter: brightness(1.5);
+    //   opacity: 0.3;
+    // }
+    //
+    // .project-cover {
+    //   opacity: 0.3;
+    // }
+  }
+
+  &.open {
+    height: 100vh;
+    max-height: none;
+    z-index: 2;
+  }
+}
+
+.project-inner-cont {
+  position: relative;
+  height: 100%;
+}
+
+.project-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  // border-top: 2px solid $gray-900;
+  border-radius: 2vw;
+  @include antialias-hack;
+}
+
+.project-screen {
+  $baseSkew: skewX(27deg);
+  width: 100%;
+  position: absolute;
+  top: 0; left: 9vw; right: 0; bottom: 0;
+  z-index: 20;
+  transform: #{$baseSkew} scaleX(0);
+
+  @include antialias-hack;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+
+  // transition: all 0.5s ease-in-out;
+
+  @include project-visible {
+    transition-delay: 0.2s;
+  }
+
+  @include project-open {
+    opacity: 1;
+    transform: #{$baseSkew} scaleX(2);
+    transition-delay: 0.2s;
+  }
+}
+
+
+/**
+ * #cover
+ * PROJECT COVER
+ */
+.project-cover {
+  $overflow-top: 3vw;
+  // width: 1440px;
+  height: calc(#{$project-height} + #{$overflow-top});
+  // max-width: 100%;
+  max-height: calc(#{$project-height-max} + #{$overflow-top});
+  overflow: hidden;
+  padding-top: calc(3.8vw + #{$overflow-top});
+  margin: -$overflow-top auto 0;
+  position: absolute;
+  left: 0; right: 0;
+  perspective: 175rem;
+  perspective-origin: 0 0;
+
+  > .transform-cont {
+    width: 1440px;
+    max-width: 100%;
+    margin: 0 auto;
+    transform: $coverRotate3d;
+    transform-origin: left top;
+  }
+}
+
 .project-cover-image {
-  width: 200px;
-  height: 200px;
+  $translate-initial-x: 0%;
+  $scale-x: 1;
+  position: relative;
+  box-shadow: shadow-layered($layer-offset: 0.8vw, $start-offset: 0.2vw);
+  opacity: 0;
+  pointer-events: none;
+  // transform: #{$coverRotate3d} translate(#{$translate-initial-x - 200}, 0%) scale(#{$scale-x});
+  // transform-origin: 0 0;
+  transform: translateX(-100%);
+
+  img {
+    // height: 60vw;
+    max-width: 100%;
+    @include antialias-hack;
+  }
+
+  img, .bevel {
+    background: $white;
+    transition: inherit;
+  }
+
+  .bevel {
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    background-size: cover;
+    transform: scaleX(5) skewY(-83.5deg) translate(-0.02vw, 0.12vw);
+    filter: brightness(0.8);
+  }
+
+  @include project-visible {
+    // transform: #{$coverRotate3d} translate(#{$translate-initial-x}, 0%) scale(#{$scale-x});
+    opacity: 1;
+    transform: none;
+  }
+
+  @include project-open {
+    opacity: 0;
+    transform: translateX(-100%);
+    // transform: #{$coverRotate3d} translate(#{$translate-initial-x - 200}, 0%) scale(#{$scale-x});
+  }
+}
+
+.project-cover-right-cont {
+  padding-left: 3.5vw;
+  margin-top: 17vw;
+}
+
+// #title
+.project-title {
+  margin: 0.3em 0 0.6em;
+  position: relative;
+  left: 1.5vw;
+  font-size: 6.5vw !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  // transform: #{$coverRotate3d} translate(-2%, 0%) scale(1.1);
+
+  .text-split-base {
+    display: block;
+    width: 999px;
+  }
+
+  .text-split-part {
+    display: inline-block;
+    position: relative;
+
+    animation: {
+      duration: 0.5s;
+      timing-function: #{$easeOutBack}, ease-in-out, ease-in-out;
+      fill-mode: both;
+    }
+
+    @include project-initial {
+      opacity: 0;
+      animation-delay: 0.2s;
+      animation-name: collapse, fadeOut, hideShadow;
+    }
+
+    @for $i from 1 through 20 {
+      &:nth-child(#{$i}) {
+        $delay: 0.1s * ($i - 1);
+        animation-delay: #{$delay}, #{$delay}, #{$delay};
+      }
+    }
+  }
+
+  .text-split-content-t {
+    margin-right: -0.04em;
+  }
+
+  .whitespace {
+    display: block;
+    width: 0;
+    height: 0;
+
+    .project[data-project-id='job-one'] & {
+      display: inline-block;
+      width: auto;
+      height: auto;
+    }
+  }
+
+  @include project-visible {
+    .text-split-part {
+      opacity: 0;
+      animation-name: pop, fadeIn, showShadow;
+    }
+  }
+
+  @include project-open {
+    opacity: 0;
+    // transform: #{$coverRotate3d} translate(#{0% + 150}, 0%) scale(1.1);
+    transform: translateX(100%);
+  }
+}
+
+// #tags
+.project-tags {
+  width: 28vw;
+  max-width: 100%;
+
+  // transform: #{$coverRotate3d} translate(-27%, 14%);
+
+  .transform-wrap-inner {
+    animation: {
+      duration: 0.3s;
+      timing-function: #{$easeOutBack}, ease-in-out, ease-in-out;
+      fill-mode: both;
+    }
+
+    @include project-initial {
+      animation-name: collapse, fadeOut, hideShadow;
+    }
+
+    @include project-visible {
+      animation-name: pop, fadeIn, showShadow;
+      animation-delay: 1s;
+    }
+
+    @include project-open {
+      animation: 0.5s flyOutRight ease-in-out;
+      animation-delay: 0.1s;
+      animation-fill-mode: both;
+    }
+  }
+
+  .tag {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 1.2vw;
+    font-weight: 700;
+    letter-spacing: 0.17em;
+    text-shadow: 0 2px 0 transparentize($black, 0.8);
+    border-radius: 999px;
+    @include antialias-hack;
+    animation: {
+      duration: 0.3s;
+      timing-function: #{$easeOutBack}, ease-in-out, ease-in-out;
+      fill-mode: both;
+    }
+
+    // &::before {
+    //   content: '#';
+    //   // font-weight: 400;
+    //   opacity: 0.7;
+    // }
+  }
+}
+
+.project-actions {
+  .transform-wrap-inner {
+    animation: {
+      duration: 0.3s;
+      timing-function: #{$easeOutBack}, ease-in-out, ease-in-out;
+      fill-mode: both;
+    }
+
+    @include project-initial {
+      animation-name: collapse, fadeOut, hideShadow;
+    }
+
+    @include project-visible {
+      animation-name: pop, fadeIn, showShadow;
+      animation-delay: 1s;
+    }
+
+    @include project-open {
+      animation: 0.5s flyOutRight ease-in-out;
+      animation-delay: 0.1s;
+      animation-fill-mode: both;
+    }
+  }
+
+  .btn {
+    transition: all 0.1s ease-in-out;
+    font-size: 1.2vw;
+
+    &:hover {
+      transform: translate3d(0.5em, -0.5em, 0) scale(1.05);
+    }
+
+    &:active {
+      transform: translate3d(0.5em, -0.5em, 0) scale(1.1, 1.05);
+      transition-duration: 0.1s;
+      transition-timing-function: ease-out;
+    }
+
+    &.btn-lg {
+      font-size: 1.55vw;
+    }
+  }
+}
+
+.trigger-open {
+  margin-bottom: 1.2em;
+}
+
+.project-links {
+  .btn:not(:last-child) {
+    margin-right: 1vw;
+  }
+}
+
+.project-detail {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 21;
+  overflow: hidden;
+  pointer-events: none;
+
+  .trigger-close {
+    position: fixed;
+    top: 8.5vw;
+    left: -3vw;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 0.3s #{$easeOutBack};
+
+    .btn {
+      font-size: 1.4vw;
+      padding-left: 5vw;
+    }
+  }
+
+  @include project-initial {
+    display: none;
+  }
+
+  @include project-open {
+    overflow: {
+      x: hidden;
+      y: auto;
+    }
+    pointer-events: auto;
+
+    .trigger-close {
+      opacity: 1;
+      transform: none;
+      transition-delay: 1.2s;
+    }
+  }
+}
+
+.project-detail-right-cont {
+  padding: {
+    top: 6vw;
+    left: 4vw;
+    right: 3vw;
+  }
+  transition-timing-function: #{$easeOutBack};
+
+  @include project-visible {
+    opacity: 0;
+    transform: scale(0.8);
+    transform-origin: center 50vh;
+    // transition-duration: 0.2s;
+  }
+
+  @include project-open {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.7s;
+  }
+}
+
+// #lead
+.project-lead {
+  width: 7em;
+  max-width: 100%;
+  position: relative;
+  left: -1.7em;
+  font: {
+    family: 'Coco Gothic Ultralight Italic';
+    size: 6vw !important;
+    weight: 200;
+    style: italic;
+  }
+  line-height: 1;
+}
+
+// #body
+.project-body {
+  padding-right: 2.5vw;
+  margin: {
+    top: 4vw;
+    bottom: 10vw;
+  }
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+
+  h2 {
+    margin: 3vw 0 2vw;
+  }
+
+  figure {
+    margin: 4vw 0 3vw;
+    width: 140%;
+    transform: translateX(-4vw)
+  }
+
+  img {
+    max-width: 100%;
+    // border: 10px solid $white;
+  }
+
+  figcaption {
+    margin-top: 1.3vw;
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.5;
+    letter-spacing: 0.02em;
+  }
 }

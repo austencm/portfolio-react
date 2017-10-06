@@ -1,14 +1,15 @@
-import React, { Component } from 'react'
-import { Container, Row, Col } from 'reactstrap'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import Icon from './Icon'
+import styles from 'header.scss'
 
-export default class Header extends Component {
+export default class Header extends React.Component {
   render() {
     return (
-      <header>
-        <Container>
-          Header
-          <nav>Nav</nav>
-        </Container>
+      <header id="portfolio-header">
+        <Link to="/" className="to-intro">
+          <Icon name="chevron-down" />
+        </Link>
       </header>
     )
   }
