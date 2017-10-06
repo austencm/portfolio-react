@@ -648,6 +648,13 @@ babel-plugin-transform-react-display-name@^6.23.0:
   dependencies:
     babel-runtime "^6.22.0"
 
+babel-plugin-transform-react-jsx-img-import@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-react-jsx-img-import/-/babel-plugin-transform-react-jsx-img-import-0.1.4.tgz#589b98d462299e235577f2d5371b439453196eac"
+  dependencies:
+    babel-types "^6.10.0"
+    lodash "^4.13.1"
+
 babel-plugin-transform-react-jsx-self@^6.22.0:
   version "6.22.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-react-jsx-self/-/babel-plugin-transform-react-jsx-self-6.22.0.tgz#df6d80a9da2612a121e6ddd7558bcbecf06e636e"
@@ -785,7 +792,7 @@ babel-traverse@^6.24.1, babel-traverse@^6.26.0:
     invariant "^2.2.2"
     lodash "^4.17.4"
 
-babel-types@^6.19.0, babel-types@^6.24.1, babel-types@^6.26.0:
+babel-types@^6.10.0, babel-types@^6.19.0, babel-types@^6.24.1, babel-types@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-types/-/babel-types-6.26.0.tgz#a3b073f94ab49eb6fa55cd65227a334380632497"
   dependencies:
@@ -861,7 +868,7 @@ bin-version@^1.0.0:
   dependencies:
     find-versions "^1.0.0"
 
-bin-wrapper@^3.0.0:
+bin-wrapper@^3.0.0, bin-wrapper@^3.0.1:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/bin-wrapper/-/bin-wrapper-3.0.2.tgz#67d3306262e4b1a5f2f88ee23464f6a655677aeb"
   dependencies:
@@ -1189,6 +1196,12 @@ clean-css@4.1.x:
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.1.9.tgz#35cee8ae7687a49b98034f70de00c4edd3826301"
   dependencies:
     source-map "0.5.x"
+
+clean-webpack-plugin@^0.1.17:
+  version "0.1.17"
+  resolved "https://registry.yarnpkg.com/clean-webpack-plugin/-/clean-webpack-plugin-0.1.17.tgz#71c57242e6d47204d46f809413176e7bed28ec49"
+  dependencies:
+    rimraf "^2.6.1"
 
 cliui@^2.1.0:
   version "2.1.0"
@@ -1580,6 +1593,14 @@ currently-unhandled@^0.4.1:
   resolved "https://registry.yarnpkg.com/currently-unhandled/-/currently-unhandled-0.4.1.tgz#988df33feab191ef799a61369dd76c17adf957ea"
   dependencies:
     array-find-index "^1.0.1"
+
+cwebp-bin@^3.1.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/cwebp-bin/-/cwebp-bin-3.2.0.tgz#ae02df453d8c15341b1d8d499a5226bcf3bf4a6f"
+  dependencies:
+    bin-build "^2.0.0"
+    bin-wrapper "^3.0.1"
+    logalot "^2.0.0"
 
 d@1:
   version "1.0.0"
@@ -2878,6 +2899,20 @@ ieee754@^1.1.4:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.1.8.tgz#be33d40ac10ef1926701f6f08a2d86fbfd1ad3e4"
 
+image-webpack-loader@^3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/image-webpack-loader/-/image-webpack-loader-3.4.2.tgz#7e8bfa7270e853eee6d7861f0ed6a3c12d8a20f8"
+  dependencies:
+    imagemin "^5.2.2"
+    imagemin-gifsicle "^5.1.0"
+    imagemin-mozjpeg "^6.0.0"
+    imagemin-optipng "^5.2.1"
+    imagemin-pngquant "^5.0.0"
+    imagemin-svgo "^5.2.1"
+    imagemin-webp "^4.0.0"
+    loader-utils "^1.1.0"
+    object-assign "^4.1.1"
+
 imagemin-gifsicle@^5.1.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/imagemin-gifsicle/-/imagemin-gifsicle-5.2.0.tgz#3781524c457612ef04916af34241a2b42bfcb40a"
@@ -2894,7 +2929,7 @@ imagemin-mozjpeg@^6.0.0:
     is-jpg "^1.0.0"
     mozjpeg "^4.0.0"
 
-imagemin-optipng@^5.2.0:
+imagemin-optipng@^5.2.1:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/imagemin-optipng/-/imagemin-optipng-5.2.1.tgz#d22da412c09f5ff00a4339960b98a88b1dbe8695"
   dependencies:
@@ -2910,14 +2945,22 @@ imagemin-pngquant@^5.0.0:
     is-png "^1.0.0"
     pngquant-bin "^3.0.0"
 
-imagemin-svgo@^5.2.0:
+imagemin-svgo@^5.2.1:
   version "5.2.2"
   resolved "https://registry.yarnpkg.com/imagemin-svgo/-/imagemin-svgo-5.2.2.tgz#501699f5789730a57922b8736ea15c53f7b55838"
   dependencies:
     is-svg "^2.0.0"
     svgo "^0.7.0"
 
-imagemin@^5.2.0:
+imagemin-webp@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/imagemin-webp/-/imagemin-webp-4.0.0.tgz#a2caf32b5f52ad21b949a6fed8efc901daf7249d"
+  dependencies:
+    cwebp-bin "^3.1.0"
+    exec-buffer "^3.0.0"
+    is-cwebp-readable "^1.0.0"
+
+imagemin@^5.2.2:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/imagemin/-/imagemin-5.3.1.tgz#f19c2eee1e71ba6c6558c515f9fc96680189a6d4"
   dependencies:
@@ -2927,18 +2970,6 @@ imagemin@^5.2.0:
     p-pipe "^1.1.0"
     pify "^2.3.0"
     replace-ext "^1.0.0"
-
-img-loader@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/img-loader/-/img-loader-2.0.0.tgz#583740b3e2a38aeba5435c7dd530be9ce7454fd9"
-  dependencies:
-    imagemin "^5.2.0"
-    imagemin-gifsicle "^5.1.0"
-    imagemin-mozjpeg "^6.0.0"
-    imagemin-optipng "^5.2.0"
-    imagemin-pngquant "^5.0.0"
-    imagemin-svgo "^5.2.0"
-    loader-utils "^1.0.4"
 
 in-publish@^2.0.0:
   version "2.0.0"
@@ -3046,6 +3077,12 @@ is-bzip2@^1.0.0:
 is-callable@^1.1.1, is-callable@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/is-callable/-/is-callable-1.1.3.tgz#86eb75392805ddc33af71c92a0eedf74ee7604b2"
+
+is-cwebp-readable@^1.0.0:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/is-cwebp-readable/-/is-cwebp-readable-1.0.3.tgz#9a8fde2bed77f3417ae9371258c58e2ec3285118"
+  dependencies:
+    file-type "^3.1.0"
 
 is-date-object@^1.0.1:
   version "1.0.1"
@@ -3561,7 +3598,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@^4.0.0, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@~4.17.4:
+lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@~4.17.4:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 

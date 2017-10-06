@@ -7,7 +7,8 @@
   "author": "Austen Morgan",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --hot --watch"
+    "start": "webpack-dev-server --hot --watch",
+    "build": "webpack"
   },
   "dependencies": {
     "lodash.debounce": "^4.0.8",
@@ -24,16 +25,18 @@
     "babel-loader": "^7.1.1",
     "babel-plugin-syntax-decorators": "^6.13.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-react-jsx-img-import": "^0.1.4",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-es2016": "^6.24.1",
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.17",
     "css-hot-loader": "^1.3.0",
     "css-loader": "^0.28.5",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.30.1",
-    "img-loader": "^2.0.0",
+    "image-webpack-loader": "^3.4.2",
     "markdown-with-front-matter-loader": "^0.1.0",
     "node-sass": "^4.5.3",
     "path": "^0.12.7",

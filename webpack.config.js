@@ -1,22 +1,14 @@
 const path = require('path'),
       HtmlWebpackPlugin = require('html-webpack-plugin'),
       // TextToSVGPlugin = require('./plugins/text-to-svg-plugin'),
-      ExtractTextPlugin = require('extract-text-webpack-plugin')
+      ExtractTextPlugin = require('extract-text-webpack-plugin'),
+      CleanWebpackPlugin = require('clean-webpack-plugin')
 
-const htmlWebpack = new HtmlWebpackPlugin({
-        template: './client/index.html',
-        filename: 'index.html',
-        inject: 'body'
-      })
-      // extractSass = new ExtractTextPlugin({
-      //   filename: "[name].[contenthash].css",
-      //   disable: process.env.NODE_ENV === 'development'
-      // })
 
 module.exports = {
   entry: ['./client/app.js'],
   output: {
-    path: path.resolve('dist'),
+    path: path.resolve('docs'),
     filename: 'bundle.js'
   },
   module: {
@@ -62,6 +54,46 @@ module.exports = {
         })),
       },
 
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        exclude: /node_modules/,
+        loaders: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[hash].[ext]',
+            },
+          }
+        ]
+      },
+
+      // Images
+      // {
+      //   test: /\.(gif|png|jpe?g|svg)$/i,
+      //   exclude: /node_modules/,
+      //   loaders: [
+      //     'file-loader', {
+      //       loader: 'image-webpack-loader',
+      //       options: {
+      //         gifsicle: {
+      //           interlaced: false,
+      //         },
+      //         optipng: {
+      //           optimizationLevel: 7,
+      //         },
+      //         pngquant: {
+      //           quality: '65-90',
+      //           speed: 4
+      //         },
+      //         mozjpeg: {
+      //           progressive: true,
+      //           quality: 65
+      //         }
+      //       }
+      //     }
+      //   ]
+      // },
+
       // Fonts
       {
         test: /(\.eot|\.ttf|\.woff[2]?)$/,
@@ -73,23 +105,16 @@ module.exports = {
         test: /\.md$/,
         loader: 'markdown-with-front-matter-loader',
         exclude: /node_modules/
-      },
-
-      // Image optimization
-      // TODO: make sure this is working
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        use: [
-          'url-loader?limit=10000',
-          'img-loader'
-        ],
-        exclude: /node_modules/
       }
     ]
   },
   plugins: [
-    htmlWebpack,
-    // new TextToSVGPlugin,
+    new CleanWebpackPlugin(['docs']),
+    new HtmlWebpackPlugin({
+      template: './client/index.html',
+      filename: 'index.html',
+      inject: 'body'
+    }),
     new ExtractTextPlugin({
       filename: 'style.css',
       // allChunks: true

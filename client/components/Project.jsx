@@ -73,7 +73,7 @@ export default class Project extends React.Component {
                     <Col md="6" lg="6">
                       <div className="project-cover-image">
                         <div className="bevel" style={{backgroundImage: `url(${coverImagePath})`}}></div>
-                        <img src={coverImagePath} title={this.props.domain} alt={`${this.props.title} website screenshot`} />
+                        <img src={require(coverImagePath)} title={this.props.domain} alt={`${this.props.title} website screenshot`} />
                       </div>
                     </Col>
                     <Col md="6" lg="6">
