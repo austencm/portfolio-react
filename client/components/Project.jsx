@@ -56,6 +56,7 @@ export default class Project extends React.Component {
   }
 
   render() {
+    // const coverImagePath = `/client/projects/assets/${this.props.id}/${this.props.cover}`
     const coverImagePath = `/client/projects/assets/${this.props.id}/${this.props.cover}`
 
     return (

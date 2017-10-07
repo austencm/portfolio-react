@@ -28071,7 +28071,7 @@ exports.default = MoonLink;
 
 // removed by extract-text-webpack-plugin
     if(false) {
-      // 1507338351649
+      // 1507338736673
       var cssReload = require("../../node_modules/css-hot-loader/hotModuleReplacement.js")(module.id, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -28084,7 +28084,7 @@ exports.default = MoonLink;
 
 // removed by extract-text-webpack-plugin
     if(false) {
-      // 1507338351603
+      // 1507338736624
       var cssReload = require("../../node_modules/css-hot-loader/hotModuleReplacement.js")(module.id, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -28383,6 +28383,7 @@ var Project = (0, _autobindDecorator2.default)(_class = function (_React$Compone
   }, {
     key: 'render',
     value: function render() {
+      // const coverImagePath = `/client/projects/assets/${this.props.id}/${this.props.cover}`
       var coverImagePath = '/client/projects/assets/' + this.props.id + '/' + this.props.cover;
 
       return _react2.default.createElement(
@@ -36493,7 +36494,7 @@ exports.default = TagGroup;
 
 // removed by extract-text-webpack-plugin
     if(false) {
-      // 1507338349855
+      // 1507338735701
       var cssReload = require("../../node_modules/css-hot-loader/hotModuleReplacement.js")(module.id, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -36506,7 +36507,7 @@ exports.default = TagGroup;
 
 // removed by extract-text-webpack-plugin
     if(false) {
-      // 1507338350171
+      // 1507338735912
       var cssReload = require("../../node_modules/css-hot-loader/hotModuleReplacement.js")(module.id, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -36636,199 +36637,199 @@ webpackContext.id = 285;
 /* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/dogtown-media.7d4c4e3bb7b07d576f4b67030dae7055.png";
+module.exports = __webpack_require__.p + "client/projects/assets/dogtown-media/dogtown-media.png";
 
 /***/ }),
 /* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/dogtown-news-tabs.8001b6ffc67010569a34d99fed93de70.png";
+module.exports = __webpack_require__.p + "client/projects/assets/dogtown-media/dogtown-news-tabs.png";
 
 /***/ }),
 /* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/portfolio-layout.8ed239f2138ddd9457c13720920e3fcc.png";
+module.exports = __webpack_require__.p + "client/projects/assets/dogtown-media/portfolio-layout.png";
 
 /***/ }),
 /* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/project-admin-ui.8de22a18011683180a6d53416eaad6e9.png";
+module.exports = __webpack_require__.p + "client/projects/assets/dogtown-media/project-admin-ui.png";
 
 /***/ }),
 /* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/job-one-blog-latest.d11dd979ada39ed68a871f2671a265ea.png";
+module.exports = __webpack_require__.p + "client/projects/assets/job-one/job-one-blog-latest.png";
 
 /***/ }),
 /* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/job-one-branding.cf1ed0b12401a481e36304ecc3fba97c.png";
+module.exports = __webpack_require__.p + "client/projects/assets/job-one/job-one-branding.png";
 
 /***/ }),
 /* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/job-one-cta.e3ef2cd6d913ef066b9ce53ace5ec948.png";
+module.exports = __webpack_require__.p + "client/projects/assets/job-one/job-one-cta.png";
 
 /***/ }),
 /* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/job-one-liquid.a6ab1cbf1621a1c65a7d62e94c6ea9de.png";
+module.exports = __webpack_require__.p + "client/projects/assets/job-one/job-one-liquid.png";
 
 /***/ }),
 /* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/job-one.a1e05d0e41196489fb94db723fe08e44.png";
+module.exports = __webpack_require__.p + "client/projects/assets/job-one/job-one.png";
 
 /***/ }),
 /* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/nationbuilder-logo.ddbc5b807a562866e24d1335286ce3ef.svg";
+module.exports = __webpack_require__.p + "client/projects/assets/job-one/nationbuilder-logo.svg";
 
 /***/ }),
 /* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/kirb-cta-form.72c7134521553d3e225e242fa18a8883.png";
+module.exports = __webpack_require__.p + "client/projects/assets/kirb/kirb-cta-form.png";
 
 /***/ }),
 /* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/kirb-grid-comparison.2ed038e6c7d41cc42053f63131668af6.png";
+module.exports = __webpack_require__.p + "client/projects/assets/kirb/kirb-grid-comparison.png";
 
 /***/ }),
 /* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/kirb-landing.6915ba7de9080b5de5b22ceb60112239.png";
+module.exports = __webpack_require__.p + "client/projects/assets/kirb/kirb-landing.png";
 
 /***/ }),
 /* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/kirb.9ce424d97b0a34245f0a9394aef6e139.png";
+module.exports = __webpack_require__.p + "client/projects/assets/kirb/kirb.png";
 
 /***/ }),
 /* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/sf-intro.88b880c19c414c2d655a08e68f8fc8b0.png";
+module.exports = __webpack_require__.p + "client/projects/assets/structural-focus/sf-intro.png";
 
 /***/ }),
 /* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/sf-portfolio-filter.c6730f41310e86caf616d723d9fcf808.png";
+module.exports = __webpack_require__.p + "client/projects/assets/structural-focus/sf-portfolio-filter.png";
 
 /***/ }),
 /* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/sf-portfolio-ui.9789506920ad496712793da90c704807.png";
+module.exports = __webpack_require__.p + "client/projects/assets/structural-focus/sf-portfolio-ui.png";
 
 /***/ }),
 /* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/sf-portfolio.ad2ee1beb090c8125d947772df62206b.png";
+module.exports = __webpack_require__.p + "client/projects/assets/structural-focus/sf-portfolio.png";
 
 /***/ }),
 /* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/sf-post-types.107a56d94e4f39a3f79a813830010c34.png";
+module.exports = __webpack_require__.p + "client/projects/assets/structural-focus/sf-post-types.png";
 
 /***/ }),
 /* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/sf-project-overlay.e3c5199680a23492fd6a1b5a095dd43a.png";
+module.exports = __webpack_require__.p + "client/projects/assets/structural-focus/sf-project-overlay.png";
 
 /***/ }),
 /* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/structural-focus.82bf02e612050ec6948923df8d0ec597.png";
+module.exports = __webpack_require__.p + "client/projects/assets/structural-focus/structural-focus.png";
 
 /***/ }),
 /* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/tiro-security.98b7c5cfe216bd73adc2d4ab7d11d1cf.png";
+module.exports = __webpack_require__.p + "client/projects/assets/tiro-security/tiro-security.png";
 
 /***/ }),
 /* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/yal-branding-options-v1.d1c992472b767b9e98c49ff34b4138fc.png";
+module.exports = __webpack_require__.p + "client/projects/assets/youtube-auto-like/yal-branding-options-v1.png";
 
 /***/ }),
 /* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/yal-branding-v2.355a484b23ef4697f9d8772353bd9d00.png";
+module.exports = __webpack_require__.p + "client/projects/assets/youtube-auto-like/yal-branding-v2.png";
 
 /***/ }),
 /* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/yal-code-v1.611c7d05ed91fb77dfe867cc59bdc8bf.png";
+module.exports = __webpack_require__.p + "client/projects/assets/youtube-auto-like/yal-code-v1.png";
 
 /***/ }),
 /* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/yal-i18n.fb6e3645c8a61e5e501a5b827eaeee53.png";
+module.exports = __webpack_require__.p + "client/projects/assets/youtube-auto-like/yal-i18n.png";
 
 /***/ }),
 /* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/yal-initial-code.c372ac6c48499950ef316171da515c10.png";
+module.exports = __webpack_require__.p + "client/projects/assets/youtube-auto-like/yal-initial-code.png";
 
 /***/ }),
 /* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/yal-material-liker.ec4684887f02a6827478176a15c36ca5.png";
+module.exports = __webpack_require__.p + "client/projects/assets/youtube-auto-like/yal-material-liker.png";
 
 /***/ }),
 /* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/yal-recent-user-graph.fa798984d2bdad037cf9afdc113837ec.png";
+module.exports = __webpack_require__.p + "client/projects/assets/youtube-auto-like/yal-recent-user-graph.png";
 
 /***/ }),
 /* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/yal-sad-search-results.a4cde49fa7a49512991a9ca5430f036b.png";
+module.exports = __webpack_require__.p + "client/projects/assets/youtube-auto-like/yal-sad-search-results.png";
 
 /***/ }),
 /* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/yal-svg-data.f84e10a781f6dba3ce933e3d6eda8db6.png";
+module.exports = __webpack_require__.p + "client/projects/assets/youtube-auto-like/yal-svg-data.png";
 
 /***/ }),
 /* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/yal-yt-new-design.a389f6994dd10bd76801392f063fc411.png";
+module.exports = __webpack_require__.p + "client/projects/assets/youtube-auto-like/yal-yt-new-design.png";
 
 /***/ }),
 /* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "./images/youtube-auto-like.779514deb0f900c6defc2b63257a1adb.png";
+module.exports = __webpack_require__.p + "client/projects/assets/youtube-auto-like/youtube-auto-like.png";
 
 /***/ }),
 /* 319 */
@@ -36901,7 +36902,7 @@ exports.default = Header;
 
 // removed by extract-text-webpack-plugin
     if(false) {
-      // 1507338349788
+      // 1507338735608
       var cssReload = require("../../node_modules/css-hot-loader/hotModuleReplacement.js")(module.id, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -37012,7 +37013,7 @@ exports.default = Footer;
 
 // removed by extract-text-webpack-plugin
     if(false) {
-      // 1507338349747
+      // 1507338735636
       var cssReload = require("../../node_modules/css-hot-loader/hotModuleReplacement.js")(module.id, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -37025,7 +37026,7 @@ exports.default = Footer;
 
 // removed by extract-text-webpack-plugin
     if(false) {
-      // 1507338351489
+      // 1507338736560
       var cssReload = require("../../node_modules/css-hot-loader/hotModuleReplacement.js")(module.id, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
