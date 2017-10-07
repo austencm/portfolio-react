@@ -24772,7 +24772,7 @@ var _Portfolio = __webpack_require__(245);
 
 var _Portfolio2 = _interopRequireDefault(_Portfolio);
 
-var _app = __webpack_require__(290);
+var _app = __webpack_require__(323);
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -28071,7 +28071,7 @@ exports.default = MoonLink;
 
 // removed by extract-text-webpack-plugin
     if(false) {
-      // 1507332663864
+      // 1507338351649
       var cssReload = require("../../node_modules/css-hot-loader/hotModuleReplacement.js")(module.id, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -28084,7 +28084,7 @@ exports.default = MoonLink;
 
 // removed by extract-text-webpack-plugin
     if(false) {
-      // 1507332663836
+      // 1507338351603
       var cssReload = require("../../node_modules/css-hot-loader/hotModuleReplacement.js")(module.id, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -28119,11 +28119,11 @@ var _ProjectContainer = __webpack_require__(246);
 
 var _ProjectContainer2 = _interopRequireDefault(_ProjectContainer);
 
-var _Header = __webpack_require__(286);
+var _Header = __webpack_require__(319);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _Footer = __webpack_require__(288);
+var _Footer = __webpack_require__(321);
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
@@ -28204,9 +28204,8 @@ function requireDir(r) {
 }
 
 // Fetch projects map
-var projects = requireDir(__webpack_require__(279));
+var projects = requireDir(__webpack_require__(278));
 
-// console.log(projects, Object.values(projects))
 // Convert to array and sort by priority desc
 projects = Object.values(projects).sort(function (a, b) {
   return a.priority < b.priority;
@@ -28223,8 +28222,11 @@ projects = projects.map(function (p) {
   if (p.repo) p.__content = p.__content.replace(/{{repo}}/g, 'https://github.com/austencm/' + p.repo);
   // Wrap images in figure tags and copy the alt text into the caption
   p.__content = p.__content.replace(/<img(.+?)alt="(.+?)">/g, '<figure><img$1alt="$2" title="$2"><figcaption>$2</figcaption></figure>');
+
   return p;
 });
+
+__webpack_require__(285);
 
 var ProjectsContainer = function (_React$Component) {
   _inherits(ProjectsContainer, _React$Component);
@@ -28413,7 +28415,7 @@ var Project = (0, _autobindDecorator2.default)(_class = function (_React$Compone
                         'div',
                         { className: 'project-cover-image' },
                         _react2.default.createElement('div', { className: 'bevel', style: { backgroundImage: 'url(' + coverImagePath + ')' } }),
-                        _react2.default.createElement('img', { src: !(function webpackMissingModule() { var e = new Error("Cannot find module \".\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()), title: this.props.domain, alt: this.props.title + ' website screenshot' })
+                        _react2.default.createElement('img', { src: coverImagePath, title: this.props.domain, alt: this.props.title + ' website screenshot' })
                       )
                     ),
                     _react2.default.createElement(
@@ -36491,7 +36493,7 @@ exports.default = TagGroup;
 
 // removed by extract-text-webpack-plugin
     if(false) {
-      // 1507332662666
+      // 1507338349855
       var cssReload = require("../../node_modules/css-hot-loader/hotModuleReplacement.js")(module.id, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -36504,7 +36506,7 @@ exports.default = TagGroup;
 
 // removed by extract-text-webpack-plugin
     if(false) {
-      // 1507332662923
+      // 1507338350171
       var cssReload = require("../../node_modules/css-hot-loader/hotModuleReplacement.js")(module.id, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -36513,27 +36515,15 @@ exports.default = TagGroup;
 
 /***/ }),
 /* 278 */
-/***/ (function(module, exports) {
-
-function webpackEmptyContext(req) {
-	throw new Error("Cannot find module '" + req + "'.");
-}
-webpackEmptyContext.keys = function() { return []; };
-webpackEmptyContext.resolve = webpackEmptyContext;
-module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 278;
-
-/***/ }),
-/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./dogtown.md": 280,
-	"./job-one.md": 281,
-	"./kirb.md": 282,
-	"./structural-focus.md": 283,
-	"./tiro-security.md": 284,
-	"./youtube-auto-like.md": 285
+	"./dogtown.md": 279,
+	"./job-one.md": 280,
+	"./kirb.md": 281,
+	"./structural-focus.md": 282,
+	"./tiro-security.md": 283,
+	"./youtube-auto-like.md": 284
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -36549,46 +36539,299 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 279;
+webpackContext.id = 278;
 
 /***/ }),
-/* 280 */
+/* 279 */
 /***/ (function(module, exports) {
 
 module.exports = {"id":"dogtown-media","title":"Dogtown Media","priority":91,"date_start":"2015-07-01T00:00:00.000Z","date_end":"2015-08-01T00:00:00.000Z","domain":"dogtownmedia.com","tags":["Website","JS","PHP","UX","Animation","Video"],"cover":"dogtown-media.png","lead":"App development company site rebuild","__content":"<p>I&#39;d worked with Venice Beach-based <a href=\"http://{{domain}}\">Dogtown Media</a> for the better part of two years when they approached me about a redesign of their website.</p>\n<p>I&#39;d been making incremental updates and performing maintenance on the old website for a while, but it was in need of a fresh, modern redesign. As Dogtown&#39;s public-facing web presence and a major source of leads, it was necessary that the new website deliver an experience as innovative as the company&#39;s apps.</p>\n<p>This was no insignificant task. By this point, the burgeoning app development company&#39;s website has accumulated more than <span class=\"num\">40</span> unique pages and hundreds of blog posts.</p>\n<h2 id=\"process\">Process</h2>\n<p>I worked mainly with Dogtown&#39;s designer to bring this project to life. Due to the sheer number of pages, design work ran parallel to development. As comps trickled in, I built each page on a staging server. The layout and design of many minor pages were left to my discretion. I matched the old content with the new style as best as possible, then cleared these pages with the designer before they were finalized.</p>\n<h2 id=\"platform\">Platform</h2>\n<p>The old site was built using WordPress. We decided to stick with WordPress because of its editing capabilities (several people would need to make frequent changes) and the relative ease of transferring a large amount of content to a new server through the platform. I started with a WordPress theme called <a href=\"http://www.tommusrhodus.com/portfolio/pivot-wordpress-theme/\">Pivot</a> — another holdover from the old site — although by the end of the process it was modified heavily enough to be unrecognizable.</p>\n<h2 id=\"portfolio\">Portfolio</h2>\n<p>The <a href=\"http://{{domain}}/portfolio/\">Portfolio page</a> was an interesting challenge. The project showcase consisted of a grid of cover images, provided by the designer, underlying the name of each project. The catch was in the configuration. The images could be one of three sizes. The text could be dark or light and aligned left or right, depending on the color and composition of the image.</p>\n<p><img src=\"{{assets}}/portfolio-layout.png\" alt=\"Portfolio page layout\"></p>\n<p>As I was dealing with a limited number of projects, the best solution seemed to be to set each one manually. Hardcoding, however, would not be a good long-term solution. Instead, I decided to build the options into the WordPress interface. The result was a clear set of options that even a less technically-inclined user could configure.</p>\n<p><img src=\"{{assets}}/project-admin-ui.png\" alt=\"Project admin UI\"></p>\n<h2 id=\"news\">News</h2>\n<p>Later on in the process, I was tasked with integrating a new section into the <a href=\"http://{{domain}}/news/\">News page</a>. I received comps for a tabbed layout and went to work. I added tabs to the existing page and used some JavaScript to fetch the posts from the new section if the user hovers over the corresponding tab. This solution not only provided a slick user experience but also saved resources by only loading the extra posts if the user requests them.</p>\n<p>I designed the menu to be extensible, giving an administrator the ability to add more categories without touching the script. When Dogtown later added a third post category, they only needed to insert the markup for the new menu item.</p>\n<p><img src=\"{{assets}}/dogtown-news-tabs.png\" alt=\"News page UI\"></p>\n"}
 
 /***/ }),
-/* 281 */
+/* 280 */
 /***/ (function(module, exports) {
 
 module.exports = {"id":"job-one","title":"Job One","priority":80,"date_start":"2015-07-01T00:00:00.000Z","date_end":"2015-08-01T00:00:00.000Z","domain":"joboneforhumanity.com","tags":["Website","Design","UX","NationBuilder","Liquid"],"cover":"job-one.png","lead":"Website for an initiative to save the planet","__content":"<p>Non-profit organization <a href=\"http://www.factnetglobal.org/\">FACTNet</a> created the <em>Job One for Humanity</em> initiative as a way to raise climate change awareness and gather support for further efforts to combat global warming. The antiquated design of their website did not do well to represent the importance of the organization&#39;s mission.</p>\n<!--[old job one site]-->\n<p>The website was created with <a href=\"http://nationbuilder.com\">NationBuilder</a>, a CMS and associated service with a focus on community &amp; crowdsourcing features. While functional, the platform was at this point struggling in the user experience department. Their selection of themes reflected this shortcoming.</p>\n<p><img src=\"{{assets}}/nationbuilder-logo.svg\" alt=\"NationBuilder CMS\"></p>\n<p>Being a non-profit, the budget was tight for this project. In order to maximize the value of my work, I built off the stock theme as much as possible rather than create entirely new components. Additionally, we moved quickly through the design phase, the client approving the first mockup &amp; branding proposal.</p>\n<p><img src=\"{{assets}}/job-one-branding.png\" alt=\"Design proposal\"></p>\n<p>I jumped straight into making targeted improvements.</p>\n<p>Another goal of the redesign was to increase conversions — specifically, the collection of email addresses and digital signatures on a petition. The organization was preparing for a large fundraising drive combined with an advertising campaign. The website needed to be ready to make use of the increased traffic.</p>\n<p>I had helped design a new logo as part of some previous work. The colors in this logo influenced color choice for the redesign, as the client was already comfortable with them. Other design decisions were focused on making the site visually sparser and giving the content more attention, including directing the user to key action points.</p>\n<p><img src=\"{{assets}}/job-one-blog-latest.png\" alt=\"A cleaner look for blog posts\"></p>\n<p>Work on <em>Job One</em> required that I jump into an unfamiliar platform and codebase. Fortunately, I had been doing some smaller updates on the website up to this point, so when the client requested a full redesign I had enough information to give estimates.</p>\n<p>In addition to becoming familiar with the theme structure, stylesheets, and <a href=\"https://shopify.github.io/liquid/\">Liquid templating language</a>, another hurdle I faced was the inability edit the site&#39;s JavaScript, an imposed limitation of the platform. I circumvented this by using more creative styling and limiting interactive functionality.</p>\n<p><img src=\"{{assets}}/job-one-liquid.png\" alt=\"Liquid code on the homepage\"></p>\n<p>A major change involved converting the short, one-line footer to a large call-to-action section including an email input. This would be present on every page. In part due to these changes, the number of conversions increased by more than <span class=\"num\">150%</span>.</p>\n<p><img src=\"{{assets}}/job-one-cta.png\" alt=\"Footer email signup\"></p>\n<p>At the time of writing, the website continues to serve as the face of the <em>Job One for Humanity</em> initiative. I occasionally consult on technical issues.</p>\n"}
 
 /***/ }),
-/* 282 */
+/* 281 */
 /***/ (function(module, exports) {
 
 module.exports = {"id":"kirb","title":"Kirb","priority":83,"date_start":"2015-07-01T00:00:00.000Z","date_end":"2015-08-01T00:00:00.000Z","domain":"kirb.com","tags":["Website","Animation","Twilio","Social media"],"cover":"kirb.png","lead":"Effects-heavy parking startup promo site","__content":"<p>Kirb wants to revolutionize parking by making the process of finding a space as easy as calling an Uber. Through the app, owners can rent out their parking spaces, while drivers can effortlessly snatch up those spaces on-demand.</p>\n<p>The app was designed &amp; developed for Kirb Inc. by Dogtown Media (I&#39;ve worked with Dogtown on various projects, including <a title=\"Dogtown Media Website Rebuild\" href=\"/portfolio/#dogtown-media\">their own website</a>). The <a href=\"http://{{domain}}\">Kirb website</a> was developed simultaneously by yours truly, based on designs by creative agency <a href=\"http://trufcreative.com/\">TRÜF</a>.</p>\n<p>I was approached early on in the process about the possibility of building an animation-heavy promotional website. It would act as the online conduit for the app and attract interest. Both the scale and complexity of the website made it one of the most challenging, frustrating and rewarding projects to which I&#39;ve contributed.</p>\n<h2 id=\"landing-page\">Landing Page</h2>\n<p>The first and by far the greatest challenge was the landing page, alone sporting nine-hundred lines of SASS — the majority effects-related — by its completion.</p>\n<p>The page consisted of several vertical slides highlighting various features of the app. Preceding these was an introductory slide with a reveal effect that would turn out to be an intriguing assignment.</p>\n<p><img src=\"{{assets}}/kirb-landing.png\" alt=\"First slide of the landing page\"></p>\n<p>The effect was communicated to me along the following lines:</p>\n<ul>\n<li>A pattern that grows outward, filling in &quot;spaces&quot;</li>\n<li>Once full, spaces disappear and reappear, with a few teal and black brand-colored spaces also appearing</li>\n<li>All of this should be randomized</li>\n</ul>\n<p>My first task was to create the pattern. Since the sequences in the pattern never repeated and each piece would need to be manipulated individually, I saw only a couple options: convert the pattern from the comp to a massive SVG and animate the individual paths, or generate the pattern using transformed HTML elements and some JavaScript. I chose the latter, primarily because the pattern would need to extend to fill ever-larger screen sizes. This method would be more adaptable.</p>\n<p>After creating a piece of the pattern with some CSS, I wrote a script that would procedurally generate a grid of these pieces, with color distribution matching the comp as closely as possible. I will smooth over the several iterations and late, coffee-fueled, head-on-desk nights that this script and the ensuing animation work facilitated and simply say that it was a <em>learning experience</em>.</p>\n<p><img src=\"{{assets}}/kirb-grid-comparison.png\" alt=\"The pattern in the comp and the live version\"></p>\n<p>I then created the grow effect by applying increasingly greater animation delays to the pieces, starting from the center. The fade-out-fade-in effect was another animation, specified in the CSS, with a script managing the cycling and picking random pieces. The combined effects could be triggered by toggling one class on the container element.</p>\n<p>The only third-party library used for this page was a lightweight slider plugin.</p>\n<p>There were several other challenges involved in creating the landing page. Out of concern for the reader&#39;s stamina, I won&#39;t go into extreme detail. Instead, here is a brief list:</p>\n<ul>\n<li>A separate animated loading overlay.</li>\n<li>A simulated phone screen that changed with each slide.</li>\n<li>An extra &quot;footer slide&quot; added late in the process that mirrored the footer in the rest of the site but behaved like the last slide.</li>\n<li>An unusual amount of work to make the content responsive, rooted in the fact that the comps were sized for extra-large screens. Everything needed to scale to fit on smaller desktop-size screens as a result. Additionally, the mobile version of the page required significant restructuring for usability &amp; performance reasons.</li>\n<li>Specs required that content and order of each slide could be configured through the WordPress dashboard. I created custom UI for this purpose.</li>\n</ul>\n<!--![Slider configuration UI]({{assets}}/.png)-->\n<h2 id=\"integrations\">Integrations</h2>\n<p>The Kirb website included a number of integrations with third-party services. The <a href=\"http://{{domain}}/news/\">social feed</a> called for a masonry-style grid of posts pulled from the company&#39;s Instagram and Twitter feeds. As additional hurdles, the feed would require custom styling and would load more posts as the user scrolled to the bottom. Official social media embeds were out.</p>\n<p>I turned to a JavaScript plugin recommended by the designer: <a href=\"http://instafeedjs.com/\">Instafeed</a> allowed me to fetch Instagram posts on-demand — that problem was solved.</p>\n<p>Fetching Twitter posts turned out to be a bit more work. Twitter&#39;s API had recently become more restrictive, rendering AJAX queries inoperable. Eventually, I stumbled across a workable PHP library that circumvented this issue. I integrated the library with the WordPress backend and was able to inject the posts in server-side.</p>\n<p>The final step was to mix the two sets of posts, drop them in a masonry grid, and style them to adhere to the comps and the social networks&#39; content guidelines (Something I encountered for the first time during this project; Twitter&#39;s are <em>very</em> <a href=\"https://developer.twitter.com/en/developer-terms/display-requirements\">specific</a>).</p>\n<!--[image of final feed]-->\n<p>After the app launched, I integrated the call-to-action forms with communications platform <a href=\"https://www.twilio.com/\">Twilio</a>. Users could then input their phone number, where they would receive a link via SMS directing them to the app store.</p>\n<p><img src=\"{{assets}}/kirb-cta-form.png\" alt=\"Call-to-action form linking to Twilio\"></p>\n"}
 
 /***/ }),
-/* 283 */
+/* 282 */
 /***/ (function(module, exports) {
 
 module.exports = {"id":"structural-focus","title":"Structural Focus","priority":75,"date_start":"2015-07-01T00:00:00.000Z","date_end":"2015-08-01T00:00:00.000Z","domain":"structuralfocus.com","tags":["Website","JS","UI","Animation","Galleries"],"cover":"structural-focus.png","lead":"Beautiful & customizable WordPress business website","__content":"<p>An independent designer colleague I&#39;ve had the pleasure of working with on occasion came to me with a contract for an architectural firm&#39;s new website. The design was clean, media-rich, and the client required substantial editing capability — right up my alley.</p>\n<p><img src=\"{{assets}}/sf-intro.png\" alt=\"About page hero\"></p>\n<h2 id=\"customization\">Customization</h2>\n<p>The project focused heavily on solid editing capabilities for the client. With this in mind, WordPress was an easy choice for a CMS — its flexibility allowed me to create new data types and clear associated UI that would give the client control over <span class=\"num\">100</span>% of the website&#39;s content, without needing to touch code.</p>\n<p><img src=\"{{assets}}/sf-post-types.png\" alt=\"Custom data types (left) &amp; Portfolio index (right)\"></p>\n<p><img src=\"{{assets}}/sf-portfolio-ui.png\" alt=\"Project admin UI\"></p>\n<h2 id=\"portfolio\">Portfolio</h2>\n<p>Structural Focus shines with its <a href=\"{{domain}}/portfolio/\">portfolio</a>. Filled edge-to-edge with stunning photography, it was particularly satisfying to bring to life.</p>\n<p><img src=\"{{assets}}/sf-portfolio.png\" alt=\"Portfolio projects\"></p>\n<p>Instead of forcing the user to navigate back and forth between project details and the index, I wrote a script that would load individual project content into an overlay. Scripting also helped achieve the uneven, repeatable image grid.</p>\n<p><img src=\"{{assets}}/sf-project-overlay.png\" alt=\"Project overlay\"></p>\n<p>Additionally, the Selected Projects section featured custom filter UI. The excellent <a href=\"https://isotope.metafizzy.co/\">Isotope</a> library provided functionality.</p>\n<p><img src=\"{{assets}}/sf-portfolio-filter.png\" alt=\"Portfolio filter\"></p>\n"}
 
 /***/ }),
-/* 284 */
+/* 283 */
 /***/ (function(module, exports) {
 
 module.exports = {"id":"tiro-security","title":"Tiro Security","priority":70,"date_start":"2015-07-01T00:00:00.000Z","date_end":"2015-08-01T00:00:00.000Z","domain":"tirosec.com","tags":["Website","Video","WordPress","Job Listings"],"cover":"tiro-security.png","lead":null,"__content":""}
 
 /***/ }),
-/* 285 */
+/* 284 */
 /***/ (function(module, exports) {
 
 module.exports = {"id":"youtube-auto-like","title":"YouTube AutoLike","priority":85,"date_start":"2015-07-01T00:00:00.000Z","date_end":"2015-08-01T00:00:00.000Z","domain":"chrome.google.com/webstore/detail/youtube-auto-like/loodalcnddclgnfekfomcoiipiohcdim","repo":"youtube-auto-like","tags":["Chrome","Extension","JS","Graphic Design","Open source"],"cover":"youtube-auto-like.png","lead":"Browser extension tinkering","__content":"<p>As a frequent (<em>perhaps too frequent?</em>) YouTube viewer, I often found myself wanting to show support for my favorite content creators but forgetting to click the like button on videos. It&#39;s an easy action to neglect, especially considering the website&#39;s constant focus on pushing the user to the next video.</p>\n<p>The solution seemed obvious — find a browser extension that would do it automatically. While my search of the Chrome Web Store turned up several candidates, all of them either worked inconsistently or failed to fulfill my one key requirement: only like videos from channels that I was subscribed to.</p>\n<p><img src=\"{{assets}}/yal-sad-search-results.png\" alt=\"Extensions with similar functionality\"></p>\n<h2 id=\"an-extension-is-born\">An Extension is Born</h2>\n<p>It appeared that if I wanted this done, I would have to do it myself.  A script that clicked one button? <em>Easy-peasy</em>. I just had to figure out how to package it in a Chrome extension. This wasn&#39;t something I&#39;d done before. However, I often use small projects to learn a new framework or API. Coffee in hand, I proceeded undaunted.</p>\n<p>I started with a basic script that determined whether the user was subscribed by checking for a class on the subscribe button. If they were, it triggered a click on the like button.</p>\n<p><img src=\"{{assets}}/yal-initial-code.png\" alt=\"The initial code\"></p>\n<p>This worked — sort of — but it quickly became apparent that it wouldn&#39;t be as simple as I thought. Several problems needed solving:</p>\n<ul>\n<li>The script ran even if the user had already liked or disliked the video, thus doing unnecessary work or overriding the user&#39;s rating.</li>\n<li>There was a race condition: the script failed if it ran before any one of the key elements loaded.</li>\n<li>The script only worked for the first video. Weird.</li>\n</ul>\n<p>The first problem I solved by identifying and checking for certain classes on the buttons that indicated their state. However, this approach was useless if the buttons weren&#39;t yet loaded.</p>\n<p>This brought me to the second problem: how to run the script at the appropriate time — after all necessary elements had loaded. The way YouTube loaded its content rendered placing the script at the end of the body or waiting on <code>DOMContentLoaded</code> ineffective.</p>\n<p>Through trial and error, I discovered that, for whatever reason, the like/dislike buttons always loaded after the other key elements. This enabled me to check on the like button every second and take action only after it loaded.</p>\n<p>In order to solve the final problem, this process would need to be repeated every time the user navigated to a new video (YouTube transitioned between videos without reloading the page). Detecting this transition was another puzzle, one solved by snooping on YouTube&#39;s custom DOM events.</p>\n<p><img src=\"{{assets}}/yal-code-v1.png\" alt=\"Significantly improved code\"></p>\n<p>After extensive — <strong>*ahem*</strong> — <em>testing</em> by watching videos on my own browser, I deemed the extension ready. I created branding and an options menu and proudly published version one to Chrome&#39;s Web Store.</p>\n<p><img src=\"{{assets}}/yal-branding-options-v1.png\" alt=\"Version one branding and options menu\"></p>\n<p>Adoption was slow at first. After a few months, however, the number of active users began to increase rapidly, the vast majority coming from organic searches. Total users surpassed <span class=\"num\">200</span> around the four-month mark.</p>\n<h2 id=\"second-release\">Second Release</h2>\n<p>Happy with the result, I made only minor updates until early <span class=\"num\">2017</span>, when YouTube started rolling out its material design beta.</p>\n<p><img src=\"{{assets}}/yal-yt-new-design.png\" alt=\"YouTube&#39;s new design announcement\"></p>\n<p>While I love the new design, it created some inherent problems. Aside from downright breaking the functionality of the extension, YouTube was content to allow users to opt-in to the new version. This meant that the extension would now need to function with both designs.</p>\n<p>Not only was the new YouTube visually different, the team had completely changed things under the hood as well. Rather than Frankenstein the existing script with branching logic, I wrote the new version from the ground up, using a similar strategy but with a focus on writing more modular, efficient code.</p>\n<p>I started by moving the old code into a better build system (read: a build system) that I had adopted for <a href=\"https://github.com/austencm/case-cat/\">a different extension</a>. The system was a combination of some Chrome-specific Node packages and a Gulp pipeline for production. Babel allowed me to write using ES<span class=\"num\">2017</span>. (At the time of writing, Chrome <span class=\"num\">60+</span> has almost native ES<span class=\"num\">2017</span> support, but for compatibility reasons, I stuck with Babel.)</p>\n<p><img src=\"{{assets}}/yal-material-liker.png\" alt=\"Function from the new class\"></p>\n<p>The full code for this class is <a href=\"{{repo}}/blob/master/app/scripts.babel/modules/liker-material.js\">available here</a>.</p>\n<p>After packaging each liking script into a separate class, I went to work on the new script. Changes in the new YouTube functionality actually made some tasks, like detecting video navigation, easier. What I didn&#39;t expect to be an issue was selecting the like button.</p>\n<p>YouTube&#39;s material design was built using <a href=\"https://www.polymer-project.org/\">Polymer</a>. As a side-effect, the markup was more obtuse and attributes less explicit on the front-end. Due to a lack of any sort of unique attribute on the like/dislike buttons, I ended up selecting <code>alt</code> attributes with specific text on the child icon elements and walking up the tree to the button.</p>\n<p>The extension continued to attract users after the update fixed issues with the new design. I felt like it deserved a fresh look and promotional graphics.</p>\n<p><img src=\"{{assets}}/yal-branding-v2.png\" alt=\"Version two branding\"></p>\n<h2 id=\"contributions\">Contributions</h2>\n<p>Soon, however, I was alerted to an issue via the extension&#39;s <a href=\"{{repo}}\">GitHub repository</a>. A contributor attempting to port the extension to Firefox pointed out a flaw in my button selection method: it only worked for users browsing in English. As I mentioned previously, the selector looked for text in an icon&#39;s <code>alt</code> attribute. Specifically, the text <code>&quot;like this&quot;</code> — text that would change based on the user&#39;s language settings.</p>\n<p>The contributor suggested an alternative solution: select the icon using its unique SVG path data. It worked perfectly.</p>\n<p>I merged the pull request and published the fix, but I wanted to do more. The incident encouraged me to implement better internationalization in the extension. Fortunately, no other functionality was affected by this oversight, but I wanted to make sure that non-English users could have the best possible experience. This meant that the options menu needed to be translated and support localized text replacement.</p>\n<p>Chrome&#39;s internationalization API already automatically replaced specially formatted tokens with translated text. It would do this in JavaScript and CSS files, but not HTML. This was likely for performance reasons, but used in moderation I could achieve the same behavior without significant impact.</p>\n<p>I wrote a class that searched through the text nodes in a document using the <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/TreeWalker\">TreeWalker</a> Web API, replacing matching text using Chrome&#39;s <a href=\"https://developer.chrome.com/apps/i18n\">i<span class=\"num\">18</span>n</a> API. I built the class in this way so that I could easily drop it into other extensions with zero modification.</p>\n<p><img src=\"{{assets}}/yal-i18n.png\" alt=\"Internationalization replace function\"></p>\n<p>The update coincided with the addition of French and Spanish translations by the same (amazing) contributor.</p>\n<p>At the time of writing, YouTube Auto Like has attracted more than one thousand users. It continues to grow by roughly six users a day. Hopefully, there will soon be a Firefox port.</p>\n<p><img src=\"{{assets}}/yal-recent-user-graph.png\" alt=\"User growth from Jul - Oct\"></p>\n"}
 
 /***/ }),
+/* 285 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./dogtown-media/dogtown-media.png": 286,
+	"./dogtown-media/dogtown-news-tabs.png": 287,
+	"./dogtown-media/portfolio-layout.png": 288,
+	"./dogtown-media/project-admin-ui.png": 289,
+	"./job-one/job-one-blog-latest.png": 290,
+	"./job-one/job-one-branding.png": 291,
+	"./job-one/job-one-cta.png": 292,
+	"./job-one/job-one-liquid.png": 293,
+	"./job-one/job-one.png": 294,
+	"./job-one/nationbuilder-logo.svg": 295,
+	"./kirb/kirb-cta-form.png": 296,
+	"./kirb/kirb-grid-comparison.png": 297,
+	"./kirb/kirb-landing.png": 298,
+	"./kirb/kirb.png": 299,
+	"./structural-focus/sf-intro.png": 300,
+	"./structural-focus/sf-portfolio-filter.png": 301,
+	"./structural-focus/sf-portfolio-ui.png": 302,
+	"./structural-focus/sf-portfolio.png": 303,
+	"./structural-focus/sf-post-types.png": 304,
+	"./structural-focus/sf-project-overlay.png": 305,
+	"./structural-focus/structural-focus.png": 306,
+	"./tiro-security/tiro-security.png": 307,
+	"./youtube-auto-like/yal-branding-options-v1.png": 308,
+	"./youtube-auto-like/yal-branding-v2.png": 309,
+	"./youtube-auto-like/yal-code-v1.png": 310,
+	"./youtube-auto-like/yal-i18n.png": 311,
+	"./youtube-auto-like/yal-initial-code.png": 312,
+	"./youtube-auto-like/yal-material-liker.png": 313,
+	"./youtube-auto-like/yal-recent-user-graph.png": 314,
+	"./youtube-auto-like/yal-sad-search-results.png": 315,
+	"./youtube-auto-like/yal-svg-data.png": 316,
+	"./youtube-auto-like/yal-yt-new-design.png": 317,
+	"./youtube-auto-like/youtube-auto-like.png": 318
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 285;
+
+/***/ }),
 /* 286 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/dogtown-media.7d4c4e3bb7b07d576f4b67030dae7055.png";
+
+/***/ }),
+/* 287 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/dogtown-news-tabs.8001b6ffc67010569a34d99fed93de70.png";
+
+/***/ }),
+/* 288 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/portfolio-layout.8ed239f2138ddd9457c13720920e3fcc.png";
+
+/***/ }),
+/* 289 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/project-admin-ui.8de22a18011683180a6d53416eaad6e9.png";
+
+/***/ }),
+/* 290 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/job-one-blog-latest.d11dd979ada39ed68a871f2671a265ea.png";
+
+/***/ }),
+/* 291 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/job-one-branding.cf1ed0b12401a481e36304ecc3fba97c.png";
+
+/***/ }),
+/* 292 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/job-one-cta.e3ef2cd6d913ef066b9ce53ace5ec948.png";
+
+/***/ }),
+/* 293 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/job-one-liquid.a6ab1cbf1621a1c65a7d62e94c6ea9de.png";
+
+/***/ }),
+/* 294 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/job-one.a1e05d0e41196489fb94db723fe08e44.png";
+
+/***/ }),
+/* 295 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/nationbuilder-logo.ddbc5b807a562866e24d1335286ce3ef.svg";
+
+/***/ }),
+/* 296 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/kirb-cta-form.72c7134521553d3e225e242fa18a8883.png";
+
+/***/ }),
+/* 297 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/kirb-grid-comparison.2ed038e6c7d41cc42053f63131668af6.png";
+
+/***/ }),
+/* 298 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/kirb-landing.6915ba7de9080b5de5b22ceb60112239.png";
+
+/***/ }),
+/* 299 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/kirb.9ce424d97b0a34245f0a9394aef6e139.png";
+
+/***/ }),
+/* 300 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/sf-intro.88b880c19c414c2d655a08e68f8fc8b0.png";
+
+/***/ }),
+/* 301 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/sf-portfolio-filter.c6730f41310e86caf616d723d9fcf808.png";
+
+/***/ }),
+/* 302 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/sf-portfolio-ui.9789506920ad496712793da90c704807.png";
+
+/***/ }),
+/* 303 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/sf-portfolio.ad2ee1beb090c8125d947772df62206b.png";
+
+/***/ }),
+/* 304 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/sf-post-types.107a56d94e4f39a3f79a813830010c34.png";
+
+/***/ }),
+/* 305 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/sf-project-overlay.e3c5199680a23492fd6a1b5a095dd43a.png";
+
+/***/ }),
+/* 306 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/structural-focus.82bf02e612050ec6948923df8d0ec597.png";
+
+/***/ }),
+/* 307 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/tiro-security.98b7c5cfe216bd73adc2d4ab7d11d1cf.png";
+
+/***/ }),
+/* 308 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/yal-branding-options-v1.d1c992472b767b9e98c49ff34b4138fc.png";
+
+/***/ }),
+/* 309 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/yal-branding-v2.355a484b23ef4697f9d8772353bd9d00.png";
+
+/***/ }),
+/* 310 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/yal-code-v1.611c7d05ed91fb77dfe867cc59bdc8bf.png";
+
+/***/ }),
+/* 311 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/yal-i18n.fb6e3645c8a61e5e501a5b827eaeee53.png";
+
+/***/ }),
+/* 312 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/yal-initial-code.c372ac6c48499950ef316171da515c10.png";
+
+/***/ }),
+/* 313 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/yal-material-liker.ec4684887f02a6827478176a15c36ca5.png";
+
+/***/ }),
+/* 314 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/yal-recent-user-graph.fa798984d2bdad037cf9afdc113837ec.png";
+
+/***/ }),
+/* 315 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/yal-sad-search-results.a4cde49fa7a49512991a9ca5430f036b.png";
+
+/***/ }),
+/* 316 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/yal-svg-data.f84e10a781f6dba3ce933e3d6eda8db6.png";
+
+/***/ }),
+/* 317 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/yal-yt-new-design.a389f6994dd10bd76801392f063fc411.png";
+
+/***/ }),
+/* 318 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "./images/youtube-auto-like.779514deb0f900c6defc2b63257a1adb.png";
+
+/***/ }),
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36611,7 +36854,7 @@ var _Icon = __webpack_require__(65);
 
 var _Icon2 = _interopRequireDefault(_Icon);
 
-var _header = __webpack_require__(287);
+var _header = __webpack_require__(320);
 
 var _header2 = _interopRequireDefault(_header);
 
@@ -36653,12 +36896,12 @@ var Header = function (_React$Component) {
 exports.default = Header;
 
 /***/ }),
-/* 287 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // removed by extract-text-webpack-plugin
     if(false) {
-      // 1507332662602
+      // 1507338349788
       var cssReload = require("../../node_modules/css-hot-loader/hotModuleReplacement.js")(module.id, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -36666,7 +36909,7 @@ exports.default = Header;
   
 
 /***/ }),
-/* 288 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36699,7 +36942,7 @@ var _Icon = __webpack_require__(65);
 
 var _Icon2 = _interopRequireDefault(_Icon);
 
-var _footer = __webpack_require__(289);
+var _footer = __webpack_require__(322);
 
 var _footer2 = _interopRequireDefault(_footer);
 
@@ -36764,12 +37007,12 @@ var Footer = (0, _autobindDecorator2.default)(_class = function (_React$Componen
 exports.default = Footer;
 
 /***/ }),
-/* 289 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // removed by extract-text-webpack-plugin
     if(false) {
-      // 1507332662581
+      // 1507338349747
       var cssReload = require("../../node_modules/css-hot-loader/hotModuleReplacement.js")(module.id, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -36777,12 +37020,12 @@ exports.default = Footer;
   
 
 /***/ }),
-/* 290 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // removed by extract-text-webpack-plugin
     if(false) {
-      // 1507332663751
+      // 1507338351489
       var cssReload = require("../../node_modules/css-hot-loader/hotModuleReplacement.js")(module.id, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);

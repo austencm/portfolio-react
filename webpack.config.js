@@ -54,6 +54,20 @@ module.exports = {
         })),
       },
 
+      // {
+      //   test: /\.(gif|png|jpe?g|svg)$/i,
+      //   exclude: /node_modules/,
+      //   loaders: [
+      //     {
+      //       loader: 'file-loader',
+      //       options: {
+      //         name: '[name].[hash].[ext]',
+      //       },
+      //     }
+      //   ]
+      // },
+
+      // Images
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         exclude: /node_modules/,
@@ -61,38 +75,30 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[path][name].[hash].[ext]',
-            },
+              name: './images/[name].[hash].[ext]',
+            }
+          },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              gifsicle: {
+                interlaced: false,
+              },
+              // optipng: {
+              //   optimizationLevel: 2,
+              // },
+              pngquant: {
+                quality: '65-80',
+                speed: 4
+              },
+              mozjpeg: {
+                progressive: true,
+                quality: 65
+              }
+            }
           }
         ]
       },
-
-      // Images
-      // {
-      //   test: /\.(gif|png|jpe?g|svg)$/i,
-      //   exclude: /node_modules/,
-      //   loaders: [
-      //     'file-loader', {
-      //       loader: 'image-webpack-loader',
-      //       options: {
-      //         gifsicle: {
-      //           interlaced: false,
-      //         },
-      //         optipng: {
-      //           optimizationLevel: 7,
-      //         },
-      //         pngquant: {
-      //           quality: '65-90',
-      //           speed: 4
-      //         },
-      //         mozjpeg: {
-      //           progressive: true,
-      //           quality: 65
-      //         }
-      //       }
-      //     }
-      //   ]
-      // },
 
       // Fonts
       {

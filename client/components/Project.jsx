@@ -11,7 +11,6 @@ import Body from 'Body'
 import TagGroup from 'TagGroup'
 import styles from 'project.scss'
 
-
 @autobind
 export default class Project extends React.Component {
   constructor(props) {
@@ -57,7 +56,7 @@ export default class Project extends React.Component {
   }
 
   render() {
-    let coverImagePath = `/client/projects/assets/${this.props.id}/${this.props.cover}`
+    const coverImagePath = `/client/projects/assets/${this.props.id}/${this.props.cover}`
 
     return (
       <Waypoint onEnter={this.focus} onLeave={this.blur}>
@@ -73,7 +72,7 @@ export default class Project extends React.Component {
                     <Col md="6" lg="6">
                       <div className="project-cover-image">
                         <div className="bevel" style={{backgroundImage: `url(${coverImagePath})`}}></div>
-                        <img src={require(coverImagePath)} title={this.props.domain} alt={`${this.props.title} website screenshot`} />
+                        <img src={coverImagePath} title={this.props.domain} alt={`${this.props.title} website screenshot`} />
                       </div>
                     </Col>
                     <Col md="6" lg="6">
