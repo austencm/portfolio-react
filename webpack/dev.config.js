@@ -1,6 +1,7 @@
 const path = require('path'),
       merge = require('webpack-merge'),
-      common = require('./common.config.js')
+      common = require('./common.config.js'),
+      ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = merge(common, {
   devtool: 'inline-source-map',

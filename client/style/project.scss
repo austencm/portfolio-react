@@ -106,7 +106,7 @@ $coverRotate3d: rotate3d(-1, -0.5, 0.4, -40deg);
 @function shadow-3d($height: 5, $color-start: #ccc, $color-end: #aaa) {
   $shadows: ();
   @for $i from 1 through $height {
-    $shadows: append($shadows, '-#{1px * $i} #{1px * $i} 0 #{mix($color-end, $color-start, (100% / $height) * $i)}', 'comma');
+    $shadows: append($shadows, '-#{0.08vw * $i} #{0.08vw * $i} 0 #{mix($color-end, $color-start, (100% / $height) * $i)}', 'comma');
   }
 
   @return #{$shadows};
@@ -176,16 +176,15 @@ $coverRotate3d: rotate3d(-1, -0.5, 0.4, -40deg);
       .project-tags .tag {
         background-color: desaturate( darken($color, 3%), 13% );
         color: mix($white, $color, 90%);
-        box-shadow: -3px 3px 0 #{darken($color-desat, 24%)};
-        // box-shadow: -3px 3px 0 transparentize#fff;
-        border: 2px solid transparent;
+        box-shadow: -0.17vw 0.17vw 0 darken($color-desat, 24%);
+        border: 0.1vw solid transparent;
       }
 
       .btn {
         background-color: mix($white, $color, 95%);
         border: none;
         color: $color;
-        $shadow-initial: shadow-3d(5, mix($white, $color, 70%), mix($white, $color, 60%));
+        $shadow-initial: shadow-3d(4, mix($white, $color, 70%), mix($white, $color, 60%));
         box-shadow: #{$shadow-initial};
 
         &:hover {
@@ -276,7 +275,6 @@ $project-height-max: 48rem;
 .project-bg {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  // border-top: 2px solid $gray-900;
   border-radius: 2vw;
   @include antialias-hack;
 }
@@ -315,9 +313,7 @@ $project-height-max: 48rem;
  */
 .project-cover {
   $overflow-top: 3vw;
-  // width: 1440px;
   height: calc(#{$project-height} + #{$overflow-top});
-  // max-width: 100%;
   max-height: calc(#{$project-height-max} + #{$overflow-top});
   overflow: hidden;
   padding-top: calc(3.8vw + #{$overflow-top});
@@ -359,7 +355,7 @@ $project-height-max: 48rem;
   }
 
   .bevel {
-    width: 1px;
+    width: 0.1vw;
     height: 100%;
     position: absolute;
     top: 0;
@@ -493,7 +489,7 @@ $project-height-max: 48rem;
     font-size: 1.2vw;
     font-weight: 700;
     letter-spacing: 0.17em;
-    text-shadow: 0 2px 0 transparentize($black, 0.8);
+    text-shadow: 0 0.1em 0 transparentize($black, 0.8);
     border-radius: 999px;
     @include antialias-hack;
     animation: {

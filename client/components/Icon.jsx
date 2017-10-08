@@ -3,7 +3,7 @@ import React from 'react'
 
 const Icon = props => {
   return (
-    <svg className={`icon icon-${props.name}`}>
+    <svg className={`icon icon-${props.name}`} {...props}>
       <use xlinkHref={`#icon-${props.name}`}></use>
     </svg>
   )

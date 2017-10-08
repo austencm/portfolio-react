@@ -34,6 +34,9 @@ export default class Intro extends React.Component {
             <MoonLink to="mailto:heyausten@gmail.com" label="Email" color="#fff" background="#c54da7">
               <Icon name="at" />
             </MoonLink>
+            <MoonLink to="https://stackoverflow.com/users/689186/austen" label="Stack Overflow" color="#222426" background="#222426">
+              <Icon name="stack-overflow" style={{ display: 'block', transform: 'scale(1.3, 1.2) translateY(-0.1vw)' }} />
+            </MoonLink>
           </div>
         </div>
       </section>

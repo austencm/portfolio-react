@@ -119,7 +119,7 @@ export default class Project extends React.Component {
 
                 <Container>
                   <Row className="justify-content-center">
-                    <Col md="7" lg="8">
+                    <Col md="10" lg="8">
                       <div className="project-detail-right-cont">
                         <h3 className="project-lead display-3">{this.props.lead}</h3>
                         <div className="project-body">

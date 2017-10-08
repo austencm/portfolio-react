@@ -13,7 +13,11 @@ module.exports = {
       // JS/JSX
       {
         test: /\.js[x]?$/,
-        include: [path.resolve('client/app.js'), path.resolve('client/components')],
+        include: [
+          path.resolve('client/app.js'),
+          path.resolve('client/components'),
+          path.resolve('custom_modules')
+        ],
         loader: 'babel-loader'
       },
 
