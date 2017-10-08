@@ -21,22 +21,23 @@ module.exports = merge(common, {
     new webpack.EnvironmentPlugin({
       'NODE_ENV': 'production'
     }),
+    // Clean out the target directory
+    new CleanWebpackPlugin([path.resolve('docs')], {
+      root: process.cwd()
+    }),
     // Minify JS
     new UglifyJSPlugin({
       sourceMap: true,
       compress: true,
     }),
-    // Extract imported CSS into own file
-    // new ExtractTextPlugin('[name].bundle.[chunkhash].css'),
-
     // Minify CSS
     new webpack.LoaderOptionsPlugin({
       minimize: true,
     }),
-
+    // Copy static files
     new CopyWebpackPlugin([
       { from: path.resolve('CNAME') },
-    ])
+    ]),
   ],
   module: {
     rules: [
@@ -82,8 +83,9 @@ module.exports = merge(common, {
           {
             loader: 'file-loader',
             options: {
-              // name: './images/[name].[hash].[ext]',
-              name: '[name].[hash].[ext]'
+              // TODO: Figure out why webpack isn't matching image URLs
+              //       when this path is changed to anything else
+              name: '[path][name].[ext]'
             }
           },
           {
