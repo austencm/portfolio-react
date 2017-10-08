@@ -3,7 +3,6 @@
     "es2015", "es2016", "react"
   ],
   "plugins": [
-    "transform-decorators-legacy",
-    "transform-react-jsx-img-import"
+    "transform-decorators-legacy"
   ]
 }

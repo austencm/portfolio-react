@@ -4,7 +4,7 @@ import React from 'react'
 // import ReactDOM from 'react-dom'
 // import LazyLoad from 'react-lazy-load'
 import { Container, Row, Col, Button } from 'reactstrap'
-import TextSplit from 'react-text-split'
+import { LetterTextSplit } from 'react-text-split'
 import Waypoint from 'react-waypoint'
 import Window from 'Window'
 import Body from 'Body'
@@ -57,7 +57,7 @@ export default class Project extends React.Component {
 
   render() {
     // const coverImagePath = `/client/projects/assets/${this.props.id}/${this.props.cover}`
-    const coverImagePath = `/client/projects/assets/${this.props.id}/${this.props.cover}`
+    const coverImagePath = `./client/projects/assets/${this.props.id}/${this.props.cover}`
 
     return (
       <Waypoint onEnter={this.focus} onLeave={this.blur}>
@@ -85,7 +85,7 @@ export default class Project extends React.Component {
                           </div>
                         </div>
                         <h2 className="project-title display-2">
-                          <TextSplit.LetterTextSplit text={this.props.title} />
+                          <LetterTextSplit text={this.props.title} />
                         </h2>
                         <div className="project-actions">
                           <div className="transform-wrap-inner">
