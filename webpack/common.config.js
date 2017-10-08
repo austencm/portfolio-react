@@ -17,40 +17,6 @@ module.exports = {
         loader: 'babel-loader'
       },
 
-      // SASS
-      {
-        test: /(\.css|\.scss)$/,
-        include: path.resolve('client/style'),
-        use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-						{
-							loader: 'css-loader',
-							query: {
-								// modules: true,
-								sourceMap: true,
-								importLoaders: 1,
-								// localIdentName: '[name]__[local]__[hash:base64:5]'
-							}
-						},
-						{
-							loader : 'sass-loader',
-							options: {
-								sourceMap: true,
-                // includePaths: ['client/style'],
-                // data: '@import "imports/base";'
-							}
-						},
-            {
-              loader: 'sass-resources-loader',
-              options: {
-                resources: path.resolve('client/style/imports/_resources.scss')
-              },
-            }
-					]
-        }))
-      },
-
       // Fonts
       {
         test: /(\.eot|\.ttf|\.woff[2]?)$/,
