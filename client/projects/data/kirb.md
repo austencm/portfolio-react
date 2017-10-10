@@ -4,7 +4,7 @@ title: Kirb
 priority: 83
 date_start: 2015-07-01
 date_end: 2015-08-01
-domain: kirb.com
+domain:
 tags:
   - Website
   - Animation
@@ -16,7 +16,7 @@ lead: Effects-heavy parking startup promo site
 
 Kirb wants to revolutionize parking by making the process of finding a space as easy as calling an Uber. Through the app, owners can rent out their parking spaces, while drivers can effortlessly snatch up those spaces on-demand.
 
-The app was designed & developed for Kirb Inc. by Dogtown Media (I've worked with Dogtown on various projects, including <a title="Dogtown Media Website Rebuild" href="/portfolio/#dogtown-media">their own website</a>). The [Kirb website](http://{{domain}}) was developed simultaneously by yours truly, based on designs by creative agency [TRÜF](http://trufcreative.com/).
+The app was designed & developed for Kirb Inc. by Dogtown Media (I've worked with Dogtown on various projects, including <a title="Dogtown Media Website Rebuild" href="/portfolio/#dogtown-media">their own website</a>). The Kirb website <!--[Kirb website](http://{{domain}})--> was developed simultaneously by yours truly, based on designs by creative agency [TRÜF](http://trufcreative.com/).
 
 I was approached early on in the process about the possibility of building an animation-heavy promotional website. It would act as the online conduit for the app and attract interest. Both the scale and complexity of the website made it one of the most challenging, frustrating and rewarding projects to which I've contributed.
 
@@ -56,7 +56,7 @@ There were several other challenges involved in creating the landing page. Out o
 
 ## Integrations
 
-The Kirb website included a number of integrations with third-party services. The [social feed](http://{{domain}}/news/) called for a masonry-style grid of posts pulled from the company's Instagram and Twitter feeds. As additional hurdles, the feed would require custom styling and would load more posts as the user scrolled to the bottom. Official social media embeds were out.
+The Kirb website included a number of integrations with third-party services. The <!--[social feed](http://{{domain}}/news/)--> called for a masonry-style grid of posts pulled from the company's Instagram and Twitter feeds. As additional hurdles, the feed would require custom styling and would load more posts as the user scrolled to the bottom. Official social media embeds were out.
 
 I turned to a JavaScript plugin recommended by the designer: [Instafeed](http://instafeedjs.com/) allowed me to fetch Instagram posts on-demand — that problem was solved.
 

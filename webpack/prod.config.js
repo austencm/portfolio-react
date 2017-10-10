@@ -36,7 +36,7 @@ module.exports = merge(common, {
     }),
     // Copy static files
     new CopyWebpackPlugin([
-      { from: path.resolve('CNAME') },
+      { from: path.resolve('client/static') },
     ]),
   ],
   module: {

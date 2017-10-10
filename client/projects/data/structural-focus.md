@@ -21,7 +21,7 @@ An independent designer colleague I've had the pleasure of working with on occas
 
 ## Customization
 
-The project focused heavily on solid editing capabilities for the client. With this in mind, WordPress was an easy choice for a CMS — its flexibility allowed me to create new data types and clear associated UI that would give the client control over <span class="num">100</span>% of the website's content, without needing to touch code.
+The project focused heavily on solid editing capabilities for the client. With this in mind, WordPress was an easy choice for a CMS. The flexibility of the platform allowed me to create new data types and clear UI that would give the client control over <span class="num">100</span>% of the website's content, without needing to touch code.
 
 ![Custom data types (left) & Portfolio index (right)]({{assets}}/sf-post-types.png)
 
@@ -33,10 +33,10 @@ Structural Focus shines with its [portfolio]({{domain}}/portfolio/). Filled edge
 
 ![Portfolio projects]({{assets}}/sf-portfolio.png)
 
-Instead of forcing the user to navigate back and forth between project details and the index, I wrote a script that would load individual project content into an overlay. Scripting also helped achieve the uneven, repeatable image grid.
+Instead of forcing the user to navigate back and forth between project details and the index, I wrote a script that would load individual project content into an overlay. Scripting also helped achieve the stacked grid of variously-sized images.
 
 ![Project overlay]({{assets}}/sf-project-overlay.png)
 
-Additionally, the Selected Projects section featured custom filter UI. The excellent [Isotope](https://isotope.metafizzy.co/) library provided functionality.
+Additionally, the _Selected Projects_ section featured custom filter UI. The excellent [Isotope](https://isotope.metafizzy.co/) library provided functionality.
 
 ![Portfolio filter]({{assets}}/sf-portfolio-filter.png)

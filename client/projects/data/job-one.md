@@ -27,9 +27,7 @@ Being a non-profit, the budget was tight for this project. In order to maximize 
 
 ![Design proposal]({{assets}}/job-one-branding.png)
 
-I jumped straight into making targeted improvements.
-
-Another goal of the redesign was to increase conversions — specifically, the collection of email addresses and digital signatures on a petition. The organization was preparing for a large fundraising drive combined with an advertising campaign. The website needed to be ready to make use of the increased traffic.
+One goal of the redesign was to increase conversions — specifically, the collection of email addresses and digital signatures on a petition. The organization was preparing for a large fundraising drive combined with an advertising campaign. The website needed to be ready to make use of the increased traffic.
 
 I had helped design a new logo as part of some previous work. The colors in this logo influenced color choice for the redesign, as the client was already comfortable with them. Other design decisions were focused on making the site visually sparser and giving the content more attention, including directing the user to key action points.
 
